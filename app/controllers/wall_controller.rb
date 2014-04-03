@@ -1,7 +1,12 @@
 class WallController < ApplicationController
   def write
   end
-  
+  def delete_complete
+  p = Post.find(params[:id])
+  p.destroy
+
+  redirect_to "/wall/posts"
+  end
   def write_complete
     p = Post.new
     p.name = params[:writer]
