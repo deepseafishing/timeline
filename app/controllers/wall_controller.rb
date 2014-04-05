@@ -1,6 +1,6 @@
 class WallController < ApplicationController
   before_action :login_check
-  sip_before_action :login_check, :only => [:posts]
+  skip_before_action :login_check, :only => [:posts]
   def write
   end
   def delete_complete
