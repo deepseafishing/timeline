@@ -10,7 +10,7 @@ class UserController < ApplicationController
         flash[:alert] = "Successfully signed up."
         redirect_to "/wall/posts"
        else
-         flash[:alert] = u.error.values.flatten.join(' ')
+         flash[:alert] = u.errors.values.flatten.join(' ')
          redirect_to :back
        end 
      else
