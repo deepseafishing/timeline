@@ -8,7 +8,7 @@ class WallController < ApplicationController
   redirect_to "/wall/posts"
   end
   def write_comment
-    @post_comment = Post.find(params[:id]);
+    @post_comment = Post.find(params[:id])
   end
 
   def write_complete
@@ -21,6 +21,7 @@ class WallController < ApplicationController
         flash[:alert] = p.errors[:content][0]
         redirect_to :back
       end
+      end
   def write_comment_complete
    c = Comment.new
    c.post_id = params[:post_id]
@@ -29,7 +30,7 @@ class WallController < ApplicationController
    c.save
    redirect_to "/wall/posts"
    end
-    end
+   
     def delete
     @post_delete = Post.find(params[:id])
     end
