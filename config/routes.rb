@@ -10,6 +10,7 @@ Timeline::Application.routes.draw do
   get "wall/write_comment/:id" => 'wall#write_comment'
   post "wall/write_comment_complete"
   post "user/signup_complete" 
+  get "user/login"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

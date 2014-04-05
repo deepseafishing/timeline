@@ -18,4 +18,7 @@ class UserController < ApplicationController
        redirect_to :back
      end
   end
+
+  def login
+  end
 end
