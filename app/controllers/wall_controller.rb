@@ -21,6 +21,14 @@ class WallController < ApplicationController
         flash[:alert] = p.errors[:content][0]
         redirect_to :back
       end
+  def write_comment_complete
+   c = Comment.new
+   c.post_id = params[:post_id]
+   c.name = params[:writer]
+   c.content = params[:content]
+   c.save
+   redirect_to "/wall/posts"
+   end
     end
     def delete
     @post_delete = Post.find(params[:id])
